@@ -2,7 +2,7 @@ import pickle
 from flask import Flask, request, jsonify, render_template
 import numpy as np
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='C:\\Users\\lenovo\\my ds project\\project\\Credit score\\Credit-score1\\templates')
 
 # Load the model and scaler
 model = pickle.load(open('XGBOOST.pkl', 'rb'))
@@ -36,6 +36,7 @@ def predict_api():
     # Return the predicted label as a JSON response
     return jsonify({'prediction': prediction_text})
 
+
 @app.route('/predict', methods=['POST'])
 def predict():
     # Get the input data from the form
@@ -51,7 +52,7 @@ def predict():
     prediction_text = label_map[prediction]
     
     # Return the predicted label as the output of the template
-    return render_template("home.html", prediction_text=prediction_text)
+    return render_template("home.html", prediction_text="The credit score is {}".format(prediction_text))
 
 if __name__ == '__main__':
     app.run(debug=True)

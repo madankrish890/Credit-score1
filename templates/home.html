@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Credit Score Prediction API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+</head>
+<body>
+ <div class="login">
+	<h1>Credit Score Prediction</h1>
+     <!-- Main Input For Receiving Query to our ML -->
+<form action="{{ url_for('predict')}}" method="post">
+    <input type="text" name="Month" placeholder="Month" required="required" /><br>
+      <input type="text" name="Age" placeholder="Age" required="required" /><br>
+      <input type="text" name="Occupation" placeholder="Occupation" required="required" /><br>
+      <input type="text" name="Annual_Income" placeholder="Annual Income" required="required" /><br>
+      <input type="text" name="Monthly_Inhand_Salary" placeholder="Monthly Inhand Salary" required="required" /><br>
+      <input type="text" name="Num_Bank_Accounts" placeholder="Number of Bank Accounts" required="required" /><br>
+      <input type="text" name="Num_Credit_Card" placeholder="Number of Credit Cards" required="required" /><br>
+      <input type="text" name="Interest_Rate" placeholder="Interest Rate" required="required" /><br>
+      <input type="text" name="Num_of_Loan" placeholder="Number of Loans" required="required" /><br>
+      <input type="text" name="Type_of_Loan" placeholder="Type of Loan" required="required" /><br>
+      <input type="text" name="Delay_from_due_date" placeholder="Delay from Due Date" required="required" /><br>
+      <input type="text" name="Num_of_Delayed_Payment" placeholder="Number of Delayed Payments" required="required" /><br>
+      <input type="text" name="Changed_Credit_Limit" placeholder="Changed Credit Limit" required="required" /><br>
+      <input type="text" name="Num_Credit_Inquiries" placeholder="Number of Credit Inquiries" required="required" /><br>
+      <input type="text" name="Credit_Mix" placeholder="Credit Mix" required="required" /><br>
+      <input type="text" name="Outstanding_Debt" placeholder="Outstanding Debt" required="required" /><br>
+      <input type="text" name="Credit_Utilization_Ratio" placeholder="Credit Utilization Ratio" required="required" /><br>
+      <input type="text" name="Credit_History_Age" placeholder="Credit History Age" required="required" /><br>
+      <input type="text" name="Payment_of_Min_Amount" placeholder="Payment of Minimum Amount" required="required" /><br>
+      <input type="text" name="Total_EMI_per_month" placeholder="Total EMI per Month" required="required" /><br>
+      <input type="text" name="Amount_invested_monthly" placeholder="Amount Invested Monthly" required="required" /><br>
+      <input type="text" name="Payment_Behaviour" placeholder="Payment_Behaviour" required="required" /><br>
+      <input type="text" name="Monthly_Balance" placeholder="Monthly_Balance" required="required" /><br>
+      <input type="text" name="Credit_History_Years" placeholder="Credit_History_Years" required="required" /><br>
+      <input type="text" name="Credit_History_Months" placeholder="Credit_History_Months" required="required" /><br>
+
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{prediction_text}}
+
+</body>
+</html>
+      
+  
